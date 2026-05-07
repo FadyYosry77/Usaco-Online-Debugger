@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@usaco-helper/shared-types": [
+        "packages/shared-types/src/index.ts"
+      ],
+      "@usaco-helper/debug-core": [
+        "packages/debug-core/src/index.ts"
+      ],
+      "@usaco-helper/ui-components": [
+        "packages/ui-components/src/index.ts"
+      ]
+    }
+  }
+}

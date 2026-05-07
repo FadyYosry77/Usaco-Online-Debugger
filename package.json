@@ -1,0 +1,25 @@
+{
+  "name": "usaco-local-debug-helper",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10 <11"
+  },
+  "scripts": {
+    "build": "pnpm -r --workspace-concurrency=1 build",
+    "dev:backend": "pnpm --filter @usaco-helper/backend dev",
+    "dev:extension": "pnpm --filter @usaco-helper/extension dev",
+    "start": "pnpm start:backend",
+    "start:backend": "pnpm --filter @usaco-helper/backend start",
+    "test": "pnpm build && pnpm -r --workspace-concurrency=1 test",
+    "lint": "pnpm build && pnpm -r --workspace-concurrency=1 lint",
+    "verify": "pnpm build && pnpm -r --workspace-concurrency=1 lint && pnpm -r --workspace-concurrency=1 test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}
