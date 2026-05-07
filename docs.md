@@ -1,4 +1,4 @@
-# USACO Local Debug Helper - CV Project Description
+# USACO Local Debug Helper
 
 ## Project Summary
 
