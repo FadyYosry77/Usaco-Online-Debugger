@@ -29,7 +29,3 @@ USACO Local Debug Helper is a local companion tool for the USACO Guide IDE that 
 - **Debugging / Runtime:** C++, g++, GDB/MI
 - **Testing:** Vitest, Playwright
 - **Architecture:** pnpm monorepo, shared TypeScript packages, local JSON persistence
-
-## Short CV Version
-
-- Built a TypeScript-based Chrome extension and Fastify backend for the USACO Guide IDE, enabling users to sync C++ code, compile and run locally, manage testcases, and debug with GDB features such as breakpoints, stepping, variables, stack frames, and watch expressions.
