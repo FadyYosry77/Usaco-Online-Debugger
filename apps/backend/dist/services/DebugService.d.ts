@@ -1,0 +1,37 @@
+import type { Breakpoint, DebugFrame, DebugSessionView, DebugThread, DebugVariable, HelperSettings, MemoryRead, RegisterValue, WatchExpression } from "@usaco-helper/shared-types";
+import { EventBus } from "../server/EventBus.js";
+export declare class DebugService {
+    private readonly cwd;
+    private readonly eventBus;
+    private readonly gdb;
+    private state;
+    private stack;
+    private variables;
+    private threads;
+    private registers;
+    constructor(cwd: string, eventBus: EventBus);
+    getState(): DebugSessionView;
+    getStack(): DebugFrame[];
+    getVariables(): DebugVariable[];
+    getThreads(): DebugThread[];
+    getRegisters(): RegisterValue[];
+    applyPersistedState(breakpoints: Breakpoint[], watches: WatchExpression[]): void;
+    start(executablePath: string, settings: HelperSettings, stdin?: string): Promise<DebugSessionView>;
+    stop(): DebugSessionView;
+    continue(): Promise<DebugSessionView>;
+    pause(): Promise<DebugSessionView>;
+    stepOver(): Promise<DebugSessionView>;
+    stepInto(): Promise<DebugSessionView>;
+    stepOut(): Promise<DebugSessionView>;
+    runToLine(line: number): Promise<DebugSessionView>;
+    toggleBreakpoint(breakpoint: Breakpoint): Promise<Breakpoint[]>;
+    evaluate(expression: string): Promise<string>;
+    refreshViews(watches: WatchExpression[]): Promise<void>;
+    fetchStack(): Promise<DebugFrame[]>;
+    fetchVariables(): Promise<DebugVariable[]>;
+    fetchThreads(): Promise<DebugThread[]>;
+    fetchRegisters(): Promise<RegisterValue[]>;
+    readMemory(address: string, count: number): Promise<MemoryRead>;
+    private insertBreakpoint;
+    private ensureRunning;
+}

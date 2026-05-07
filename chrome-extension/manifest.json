@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "USACO Local Debug Helper",
+  "version": "0.1.0",
+  "description": "Local-only helper for USACO practice, training, and post-contest debugging.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://ide.usaco.guide/*",
+    "http://127.0.0.1:3777/*",
+    "ws://127.0.0.1:3777/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Open USACO Debug Helper"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ide.usaco.guide/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "injectedBridge.js"
+      ],
+      "matches": [
+        "https://ide.usaco.guide/*"
+      ]
+    }
+  ]
+}
