@@ -4,7 +4,7 @@
 
 USACO Local Debug Helper is a local companion tool for the USACO Guide IDE that helps competitive programming students test, run, and debug C++ solutions directly from the browser. It combines a Chrome extension with a localhost backend to provide code syncing, local compilation, testcase management, runtime output streaming, and GDB-based debugging.
 
-## CV Bullet Points
+## Main Points
 
 - Developed **USACO Local Debug Helper**, a browser-based companion tool that helps competitive programming students debug C++ solutions from the USACO Guide IDE.
 
